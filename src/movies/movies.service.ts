@@ -29,6 +29,7 @@ export class MoviesService {
       id: this.movies.length + 1,
       ...movieData,
     });
+    return true;
   }
 
   update(id: number, updateData) {
