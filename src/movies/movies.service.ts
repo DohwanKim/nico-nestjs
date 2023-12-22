@@ -22,6 +22,7 @@ export class MoviesService {
   deleteOne(id: number) {
     this.getOne(id);
     this.movies = this.movies.filter((movie) => movie.id !== id);
+    return true;
   }
 
   create(movieData: CreateMovieDto) {
@@ -36,5 +37,6 @@ export class MoviesService {
     const movie = this.getOne(id);
     this.deleteOne(id);
     this.movies.push({ ...movie, ...updateData });
+    return true;
   }
 }

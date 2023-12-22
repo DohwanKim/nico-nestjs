@@ -37,7 +37,7 @@ export class MoviesController {
   }
 
   @Patch(':id')
-  patch(@Param('id') movieId: string, @Body() updateData: UpdateMovieDto) {
+  patch(@Param('id') movieId: number, @Body() updateData: UpdateMovieDto) {
     return {
       updatedMovie: movieId,
       ...updateData,
