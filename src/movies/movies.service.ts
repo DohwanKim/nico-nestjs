@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { Movie } from './entities/movie.entity';
+import { MovieEntity } from './entities/movie.entity';
 import { CreateMovieDto } from './dto/create-movie.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -8,15 +8,17 @@ import { UpdateMovieDto } from './dto/update-movie.dto';
 @Injectable()
 export class MoviesService {
   constructor(
-    @InjectRepository(Movie) private readonly movies: Repository<Movie>,
+    @InjectRepository(MovieEntity)
+    private moviesRepository: Repository<MovieEntity>,
   ) {}
 
-  getAll(): Promise<Movie[]> {
-    return this.movies.find();
+  async getAll(): Promise<MovieEntity[]> {
+    return await this.moviesRepository.find();
   }
 
-  getOne(id: number): Promise<Movie> {
-    const movie = this.movies.findOne({ where: { id } });
+  async getOne(id: number): Promise<MovieEntity> {
+    const movie = await this.moviesRepository.findOne({ where: { id } });
+
     if (!movie) {
       throw new NotFoundException(`Movie id ${id} not found`);
     }
@@ -24,31 +26,31 @@ export class MoviesService {
     return movie;
   }
 
-  deleteOne(id: number) {
-    try {
-      this.getOne(id).then((movie) => this.movies.delete(movie.id));
-      return true;
-    } catch (e) {
-      return false;
+  async deleteOne(id: number) {
+    const result = await this.moviesRepository.delete({ id });
+
+    if (result.affected === 0) {
+      throw new NotFoundException(`Movie id ${id} not found`);
     }
+
+    return true;
   }
 
   create(movieData: CreateMovieDto) {
-    const movie: Movie = new Movie();
+    const movie: MovieEntity = new MovieEntity();
 
     movie.title = movieData.title;
     movie.year = movieData.year;
     movie.genres = movieData.genres;
 
-    return this.movies.save(movie);
+    return this.moviesRepository.save(movie);
   }
 
-  update(id: number, updateData: UpdateMovieDto) {
-    this.getOne(id).then((movie) => {
-      movie.title = updateData.title;
-      movie.year = updateData.year;
-      movie.genres = updateData.genres;
-    });
+  async update(id: number, updateData: UpdateMovieDto) {
+    const target = await this.getOne(id);
+    const updated = { ...target, ...updateData };
+
+    await this.moviesRepository.save(updated);
     return true;
   }
 }
