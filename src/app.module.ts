@@ -4,6 +4,7 @@ import { AppController } from './app.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import * as process from 'process';
+import { MovieEntity } from './movies/entities/movie.entity';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -18,7 +19,7 @@ import * as process from 'process';
       username: process.env.DATABASE_USERNAME,
       password: process.env.DATABASE_PASSWORD,
       database: process.env.DATABASE_NAME,
-      entities: [__dirname + '../**/*.entity.{js,ts}'],
+      entities: [MovieEntity],
       synchronize: true,
     }),
     MoviesModule,
