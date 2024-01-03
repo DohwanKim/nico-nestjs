@@ -1,73 +1,26 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+## 개요
+슬슬 프론트가 물리는데 니코 무료 강의로 nest에 입문해보자.   
+하물며 풀스택 경험은 언제나 협업에 옳다.
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## 왜 nest임?
+Java 아예 모르는건 아니지만 그렇다고 토이플젝에서 spring을 쓰기에는 너무 과하다고 생각.  
+그렇지만 아예 아키텍쳐가 없는 express를 쓰기엔 뭔가 좀...  
+왠지 nest라면 spring과 유사한(엄밀히는 앵귤러지만) 아키텍쳐 구조를 가지고 작성은 타입스크립트이니 java에 대한 부담도 없겠다고 생각.  
+그래서 nest를 쓰기로 결정.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## 이전에 알고 있던 지식
+- MVC 패턴
+- Spring boot 꼼지락 거렸던 것 (거의 망각)
+- Nodejs express로 서버 구축해본 경험 (거의 망각)
+  - 또한 헤로쿠에 배포했던 경험 (거의 망각. 진짜 위기인듯.)
 
-## Description
+## TODO
+-[x] 뇌 재가동
+-[x] 니코 nest 강의 완료
+-[x] 니코 nest 강의에 덤으로 컨트롤러 테스트 작성
+-[x] 니코 nest 강의의 임시 자바스크립트 CRUD를 postgreSQL typeORM으로 간단히 핸들링 해보기
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
-
-```bash
-$ npm install
-```
-
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+## 얻은 지식
+- node.js express 파생된 녀석 답게 토이 플젝에서 제법 쓸만해보인다. 근데 대규모 플젝에선 굳이 라는 느낌.
+- 우선 맛만 본 입장으론 개인 토이플젝 MVP 제작엔 이걸로 충분해 보인다. (생태계도 뭐... 무난하게 크다.)
+- 결국은 실제 개발에서 필요한 것들이 보일거 같아 기초 학습은 정도만 하고 실제 토이플젝으로 바로 시작하는게 좋을 거 같다.  
